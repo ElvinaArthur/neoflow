@@ -111,7 +111,7 @@ export const deadAnglesOffres: OffreComplet[] = [
     secteurs: ["tous"],
     prixTiers: [
       {
-        nom: "Unique",
+        nom: "Standard",
         prix: 150,
         delaiJours: 3,
         description: "Audit complet",
@@ -183,7 +183,7 @@ export const deadAnglesOffres: OffreComplet[] = [
     secteurs: ["tous"],
     prixTiers: [
       {
-        nom: "Pack Solo",
+        nom: "Basique",
         prix: 47,
         delaiJours: 0,
         description: "1 template",
@@ -194,7 +194,7 @@ export const deadAnglesOffres: OffreComplet[] = [
         popular: true,
       },
       {
-        nom: "Pack Pro",
+        nom: "Standard",
         prix: 147,
         delaiJours: 0,
         description: "5 templates",
@@ -204,7 +204,7 @@ export const deadAnglesOffres: OffreComplet[] = [
         supportJours: 14,
       },
       {
-        nom: "Pack Enterprise",
+        nom: "Pro",
         prix: 297,
         delaiJours: 0,
         description: "15 templates",
