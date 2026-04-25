@@ -1,225 +1,429 @@
-// app/page.tsx
+// app/no-code-automatisation/page.tsx
 import Link from "next/link";
 import {
   ArrowRight,
-  TrendingUp,
-  Clock,
-  Shield,
-  CheckCircle,
   Bot,
   Workflow,
   Database,
-  Star,
+  CheckCircle,
+  TrendingUp,
+  Clock,
+  Shield,
+  Zap,
+  Sparkles,
+  BarChart3,
+  Mail,
   Users,
+  ShoppingBag,
+  Building2,
 } from "lucide-react";
 
-const features = [
-  {
-    icon: Workflow,
-    title: "Workflows sur mesure",
-    description:
-      "Des automatisations adaptées à vos processus uniques, pas des templates génériques.",
-  },
-  {
-    icon: Bot,
-    title: "Agents IA intelligents",
-    description:
-      "Chatbots, scoring, RAG - des agents qui apprennent et s'améliorent.",
-  },
+const benefits = [
   {
     icon: Clock,
     title: "Gain de temps immédiat",
-    description: "Libérez 5 à 15 heures par semaine dès la première semaine.",
+    description:
+      "Automatisez les tâches répétitives et libérez 5 à 15 heures par semaine.",
   },
   {
     icon: TrendingUp,
     title: "ROI mesurable",
     description:
-      "Chaque automation est conçue pour un retour sur investissement clair.",
+      "Chaque automation a un retour sur investissement clair et rapide.",
+  },
+  {
+    icon: Shield,
+    title: "Sans risque",
+    description:
+      "Modifiez et ajustez vos workflows sans jamais casser votre infrastructure.",
+  },
+  {
+    icon: Zap,
+    title: "Rapide à déployer",
+    description:
+      "Des solutions opérationnelles en quelques jours, pas en quelques mois.",
   },
 ];
 
-const services = [
+const useCases = [
   {
-    title: "Automatisation CRM",
-    description: "Connexion HubSpot, Salesforce ou GHL à vos outils métier.",
-    price: "dès 300€",
+    icon: Users,
+    title: "CRM Automation",
+    description:
+      "Sync automatique entre votre CRM, vos emails, Slack et Google Sheets.",
+    tools: ["Make", "n8n", "HubSpot"],
   },
   {
-    title: "Agents IA Support",
-    description: "Chatbot intelligent, triage tickets et escalade automatique.",
-    price: "dès 500€",
+    icon: Bot,
+    title: "Agents IA",
+    description:
+      "Chatbots intelligents, scoring de leads, RAG sur documents internes.",
+    tools: ["n8n", "OpenAI", "Make"],
   },
   {
-    title: "Lead Generation Auto",
-    description: "Scraping, enrichissement et outreach automatisé.",
-    price: "dès 350€",
+    icon: Mail,
+    title: "Email & Marketing",
+    description:
+      "Séquences automatisées, relances intelligentes, nurturing client.",
+    tools: ["Make", "n8n", "ActiveCampaign"],
   },
   {
-    title: "Reporting Automatique",
-    description: "Agrégation multi-sources et envoi automatique.",
-    price: "dès 250€",
+    icon: ShoppingBag,
+    title: "E-commerce",
+    description:
+      "Paniers abandonnés, synchronisation stocks, facturation auto.",
+    tools: ["Make", "Shopify", "Stripe"],
+  },
+  {
+    icon: BarChart3,
+    title: "Reporting Auto",
+    description: "Agrégation multi-sources, rapports PDF, alertes Slack.",
+    tools: ["n8n", "Google Sheets", "Looker"],
+  },
+  {
+    icon: Building2,
+    title: "Lead Generation",
+    description: "Scraping, enrichissement, injection CRM, outreach auto.",
+    tools: ["n8n", "Make", "Apify"],
   },
 ];
 
-export default function Home() {
+const deadAngles = [
+  {
+    title: "AI Voice Agent",
+    description:
+      "Réceptionniste IA qui prend les appels, qualifie et prend RDV.",
+    price: "dès 1200€",
+    tag: "Innovant",
+  },
+  {
+    title: "Marché Africain Francophone",
+    description: "Solutions localisées avec WhatsApp Business et Mobile Money.",
+    price: "dès 200€",
+    tag: "Local",
+  },
+  {
+    title: "Retainer Maintenance",
+    description: "Suivi mensuel, corrections, évolutions — revenu récurrent.",
+    price: "dès 200€/mois",
+    tag: "Stable",
+  },
+  {
+    title: "RAG Agent",
+    description:
+      "Chatbot sur votre documentation interne (PDF, Notion, Drive).",
+    price: "dès 1000€",
+    tag: "IA Avancée",
+  },
+];
+
+export default function NoCodePage() {
   return (
     <>
-      {/* Hero Section - Style Markivo */}
-      <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28">
+      {/* Hero */}
+      <section className="relative overflow-hidden pt-32 pb-20 bg-black">
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-teal-500/5" />
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 mb-6">
-              <Star className="h-4 w-4 text-emerald-500 fill-emerald-500" />
+              <Sparkles className="h-4 w-4 text-emerald-500" />
               <span className="text-sm text-gray-300">
-                Expert Make.com & n8n
+                No-code & Intelligence Artificielle
               </span>
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
-              Smart Automation{" "}
-              <span className="gradient-text">For Your Business</span>
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+              Le no-code n'est pas une{" "}
+              <span className="gradient-text">limitation</span>
+              <br />
+              c'est un levier stratégique
             </h1>
 
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-10">
-              Automatisez vos processus métier avec le no-code. Agents IA, CRM
-              automation, lead gen — Je transforme votre façon de travailler.
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              Connectez vos applications, automatisez vos processus et créez des
+              agents IA sans écrire une ligne de code — 10x plus rapide, 10x
+              moins cher.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/catalogue"
                 className="btn-primary inline-flex items-center gap-2"
               >
-                Explorer nos offres
+                Voir les offres
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                href="/no-code-automatisation"
+                href="/contact"
                 className="btn-outline inline-flex items-center gap-2"
               >
-                En savoir plus
+                Diagnostic gratuit
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
 
-            <div className="mt-12 flex items-center justify-center gap-6 text-sm">
-              <div className="flex items-center gap-2">
-                <div className="flex -space-x-2">
-                  {[1, 2, 3].map((i) => (
-                    <div
-                      key={i}
-                      className="h-8 w-8 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 flex items-center justify-center text-xs font-bold border-2 border-black"
-                    >
-                      {String.fromCharCode(64 + i)}
-                    </div>
-                  ))}
+      {/* What is no-code */}
+      <section className="py-20 bg-[#0a0a0a]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="section-subtitle">
+                Qu'est-ce que le no-code ?
+              </span>
+              <h2 className="section-title mb-6">
+                Automatisez sans savoir coder
+              </h2>
+              <p className="text-gray-400 mb-4">
+                Le no-code, c'est la possibilité de créer des applications, des
+                workflows et des automatisations sans écrire une seule ligne de
+                code. À la place, on utilise des interfaces visuelles, des
+                glisser-déposer et des connecteurs préfabriqués.
+              </p>
+              <p className="text-gray-400 mb-6">
+                Avec des outils comme{" "}
+                <span className="text-emerald-500">Make.com</span> et{" "}
+                <span className="text-emerald-500">n8n</span>, je peux connecter
+                vos applications (CRM, email, Google Sheets, Slack, etc.) et
+                créer des chaînes d'automatisation complexes en quelques jours.
+              </p>
+              <div className="flex gap-4">
+                <div className="px-4 py-2 bg-white/5 rounded-lg">
+                  <span className="text-emerald-500 font-bold">Make.com</span>
                 </div>
-                <span className="text-gray-400">+50 clients satisfaits</span>
+                <div className="px-4 py-2 bg-white/5 rounded-lg">
+                  <span className="text-emerald-500 font-bold">n8n</span>
+                </div>
+                <div className="px-4 py-2 bg-white/5 rounded-lg">
+                  <span className="text-emerald-500 font-bold">OpenAI</span>
+                </div>
               </div>
-              <div className="flex items-center gap-1">
-                <Star className="h-4 w-4 text-emerald-500 fill-emerald-500" />
-                <Star className="h-4 w-4 text-emerald-500 fill-emerald-500" />
-                <Star className="h-4 w-4 text-emerald-500 fill-emerald-500" />
-                <Star className="h-4 w-4 text-emerald-500 fill-emerald-500" />
-                <Star className="h-4 w-4 text-emerald-500 fill-emerald-500" />
-                <span className="text-gray-400 ml-2">4.9 (16 avis)</span>
+            </div>
+
+            <div className="card-premium p-8">
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="h-6 w-6 rounded-full bg-emerald-500/20 flex items-center justify-center mt-0.5">
+                    <div className="h-2 w-2 rounded-full bg-emerald-500" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">Avant l'automatisation</h3>
+                    <p className="text-gray-400 text-sm">
+                      8h/semaine de copier-coller entre 5 outils différents
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="h-6 w-6 rounded-full bg-emerald-500/20 flex items-center justify-center mt-0.5">
+                    <ArrowRight className="h-3 w-3 text-emerald-500" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">Après l'automatisation</h3>
+                    <p className="text-gray-400 text-sm">
+                      30 min/semaine — tout est synchronisé automatiquement
+                    </p>
+                  </div>
+                </div>
+                <div className="pt-4 border-t border-white/10">
+                  <div className="text-2xl font-bold text-emerald-500">
+                    -94%
+                  </div>
+                  <p className="text-sm text-gray-400">
+                    de temps passé sur les tâches administratives
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features */}
+      {/* Benefits */}
+      <section className="py-20 bg-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="section-subtitle">Pourquoi passer au no-code</span>
+            <h2 className="section-title">
+              Les avantages pour votre entreprise
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {benefits.map((benefit) => (
+              <div key={benefit.title} className="card-premium p-6 text-center">
+                <div className="h-12 w-12 rounded-full bg-emerald-500/10 flex items-center justify-center mx-auto mb-4">
+                  <benefit.icon className="h-6 w-6 text-emerald-500" />
+                </div>
+                <h3 className="text-lg font-semibold mb-2">{benefit.title}</h3>
+                <p className="text-gray-400 text-sm">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Use cases */}
       <section className="py-20 bg-[#0a0a0a]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="section-subtitle">Pourquoi nous choisir</span>
-            <h2 className="section-title">
-              Des solutions pensées pour votre croissance
-            </h2>
+          <div className="text-center mb-12">
+            <span className="section-subtitle">Cas d'usage</span>
+            <h2 className="section-title">Ce qu'on peut automatiser</h2>
             <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
-              Je ne vends pas des outils, je transforme vos processus pour vous
-              faire gagner du temps et de l'argent.
+              Des exemples concrets d'automatisations que je réalise pour mes
+              clients
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {useCases.map((useCase) => (
+              <div key={useCase.title} className="card-premium p-6">
+                <useCase.icon className="h-8 w-8 text-emerald-500 mb-4" />
+                <h3 className="text-xl font-semibold mb-2">{useCase.title}</h3>
+                <p className="text-gray-400 text-sm mb-4">
+                  {useCase.description}
+                </p>
+                <div className="flex gap-2">
+                  {useCase.tools.map((tool) => (
+                    <span
+                      key={tool}
+                      className="text-xs px-2 py-1 bg-white/5 rounded-full text-gray-400"
+                    >
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Dead angles */}
+      <section className="py-20 bg-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="section-subtitle">Nos spécialités</span>
+            <h2 className="section-title">Les angles morts du marché</h2>
+            <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+              Des services rares, à forte valeur ajoutée, avec quasi zéro
+              concurrence
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((feature) => (
-              <div key={feature.title} className="card-premium p-6">
-                <div className="h-12 w-12 rounded-full bg-emerald-500/10 flex items-center justify-center mb-4">
-                  <feature.icon className="h-6 w-6 text-emerald-500" />
+            {deadAngles.map((angle) => (
+              <div
+                key={angle.title}
+                className="card-premium p-6 relative overflow-hidden"
+              >
+                <div className="absolute top-0 right-0">
+                  <span className="inline-block px-2 py-1 bg-emerald-500/20 text-emerald-500 text-xs rounded-bl-lg">
+                    {angle.tag}
+                  </span>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-gray-400 text-sm">{feature.description}</p>
+                <div className="mt-4">
+                  <h3 className="text-lg font-semibold mb-2">{angle.title}</h3>
+                  <p className="text-gray-400 text-sm mb-4">
+                    {angle.description}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-emerald-500 font-semibold">
+                      {angle.price}
+                    </span>
+                    <Link
+                      href="/contact"
+                      className="text-white hover:text-emerald-400 text-sm"
+                    >
+                      → Me contacter
+                    </Link>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Services */}
-      <section className="py-20 bg-black">
+      {/* Make vs n8n */}
+      <section className="py-20 bg-[#0a0a0a]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="section-subtitle">Nos services exclusifs</span>
-            <h2 className="section-title">
-              Des automatisations qui transforment votre business
-            </h2>
+          <div className="text-center mb-12">
+            <span className="section-subtitle">Nos outils</span>
+            <h2 className="section-title">Make.com vs n8n</h2>
+            <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+              Je maîtrise les deux plateformes et choisis la meilleure pour
+              chaque projet
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {services.map((service) => (
-              <div
-                key={service.title}
-                className="card-premium p-8 hover:scale-[1.02] transition-transform"
-              >
-                <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                <p className="text-gray-400 mb-4">{service.description}</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-emerald-500 font-semibold">
-                    {service.price}
-                  </span>
-                  <Link
-                    href="/catalogue"
-                    className="text-white hover:text-emerald-400 transition-colors text-sm font-medium"
-                  >
-                    En savoir plus →
-                  </Link>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="card-premium p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="h-10 w-10 rounded-full bg-emerald-500/20 flex items-center justify-center">
+                  <span className="text-emerald-500 font-bold">M</span>
                 </div>
+                <h3 className="text-2xl font-bold">Make.com</h3>
               </div>
-            ))}
-          </div>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-2 text-gray-400">
+                  <CheckCircle className="h-4 w-4 text-emerald-500" />
+                  Interface très visuelle, idéal pour les débutants
+                </li>
+                <li className="flex items-center gap-2 text-gray-400">
+                  <CheckCircle className="h-4 w-4 text-emerald-500" />
+                  Large bibliothèque de connecteurs (1500+ apps)
+                </li>
+                <li className="flex items-center gap-2 text-gray-400">
+                  <CheckCircle className="h-4 w-4 text-emerald-500" />
+                  Parfait pour le marketing, CRM, notifications
+                </li>
+              </ul>
+            </div>
 
-          <div className="text-center mt-12">
-            <Link
-              href="/catalogue"
-              className="text-emerald-500 hover:text-emerald-400 font-medium inline-flex items-center gap-2"
-            >
-              Voir tous nos services
-              <ArrowRight className="h-4 w-4" />
-            </Link>
+            <div className="card-premium p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="h-10 w-10 rounded-full bg-emerald-500/20 flex items-center justify-center">
+                  <span className="text-emerald-500 font-bold">n</span>
+                </div>
+                <h3 className="text-2xl font-bold">n8n</h3>
+              </div>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-2 text-gray-400">
+                  <CheckCircle className="h-4 w-4 text-emerald-500" />
+                  Open-source, auto-hébergeable
+                </li>
+                <li className="flex items-center gap-2 text-gray-400">
+                  <CheckCircle className="h-4 w-4 text-emerald-500" />
+                  Idéal pour les données sensibles et le scraping
+                </li>
+                <li className="flex items-center gap-2 text-gray-400">
+                  <CheckCircle className="h-4 w-4 text-emerald-500" />
+                  Parfait pour les agents IA et webhooks avancés
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-20">
+      <section className="py-20 bg-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="card-premium p-12 text-center bg-gradient-to-br from-emerald-500/5 to-teal-500/5 border border-emerald-500/20">
+          <div className="card-premium p-12 text-center bg-gradient-to-br from-emerald-500/10 to-teal-500/10 border-emerald-500/20">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Prêt à automatiser votre entreprise ?
+              Prêt à passer au no-code ?
             </h2>
             <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-              Discutons de vos besoins et voyons comment l'automatisation peut
-              transformer votre quotidien.
+              Obtenez un diagnostic gratuit de vos processus et découvrez les
+              opportunités d'automatisation.
             </p>
             <Link
               href="/contact"
               className="btn-primary inline-flex items-center gap-2"
             >
-              Démarrer maintenant
+              Commencer mon diagnostic
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

@@ -1,29 +1,8 @@
-// app/layout.tsx
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "NeoFlow | Automatisation No-Code & Agents IA",
-  description: "Spécialiste Make.com et n8n. Automatisez vos processus métier.",
-};
-
-export default function RootLayout({
+// app/(marketing)/layout.tsx (vide ou supprime-le)
+export default function MarketingLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html lang="fr">
-      <body className={inter.className}>
-        <Header />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
-      </body>
-    </html>
-  );
+  return <>{children}</>;
 }
