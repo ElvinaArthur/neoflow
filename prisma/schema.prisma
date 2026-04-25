@@ -1,0 +1,51 @@
+// prisma/schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Offre {
+  id                Int      @id @default(autoincrement())
+  slug              String   @unique
+  titre             String
+  descriptionCourte String
+  descriptionLongue String
+  outils            String   // stocké comme JSON string
+  livrables         String   // JSON string
+  delaiJours        Int
+  prixStarter       Int?
+  prixPro           Int?
+  prixSurDevis      Boolean  @default(false)
+  prixMensuel       Int?
+  categorie         String   // "basique", "niche", "angle-mort"
+  secteurs          String?  // JSON string array
+  tags              String   // JSON string array
+  featured          Boolean  @default(false)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@index([slug])
+  @@index([categorie])
+}
+
+model Contact {
+  id        Int      @id @default(autoincrement())
+  nom       String
+  email     String
+  telephone String?
+  entreprise String?
+  message   String
+  lu        Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model Admin {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+}
