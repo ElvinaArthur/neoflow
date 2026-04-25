@@ -4,11 +4,5 @@
   "framework": "nextjs",
   "outputDirectory": ".next",
   "cleanUrls": true,
-  "trailingSlash": false,
-  "ignoreCommand": "echo 'No ignore'",
-  "functions": {
-    "app/offres/[slug]/page.tsx": {
-      "maxDuration": 10
-    }
-  }
+  "trailingSlash": false
 }
