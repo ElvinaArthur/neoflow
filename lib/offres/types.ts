@@ -1,4 +1,4 @@
-// lib/offres/type.ts
+// lib/offres/types.ts
 export type Categorie = "basique" | "niche" | "angle-mort";
 
 export interface PrixTier {

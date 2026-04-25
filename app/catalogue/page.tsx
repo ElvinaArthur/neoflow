@@ -5,7 +5,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Container } from "@/components/shared/Container";
 import { allOffres } from "@/lib/offres";
-import type { OffreComplet } from "@/lib/offres/type";
+import type { OffreComplet } from "@/lib/offres/types";
 
 const ITEMS_PER_PAGE = 12;
 
