@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 import { PricingTier } from "./PricingTier";
-import type { OffreComplet } from "@/lib/offres/type";
+import type { OffreComplet } from "@/lib/offres/types";
 
 interface OffreDetailClientProps {
   offre: OffreComplet;

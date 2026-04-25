@@ -3,7 +3,7 @@
 
 import { Check, X, Star } from "lucide-react";
 import Link from "next/link";
-import type { PrixTier } from "@/lib/offres/type";
+import type { PrixTier } from "@/lib/offres/types";
 
 interface PricingTierProps {
   tier: PrixTier;
