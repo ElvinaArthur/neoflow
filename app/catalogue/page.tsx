@@ -65,7 +65,6 @@ export default function CataloguePage() {
         </p>
       </div>
 
-      {/* Barre de recherche */}
       <div className="max-w-md mx-auto mb-8">
         <input
           type="text"
@@ -79,7 +78,6 @@ export default function CataloguePage() {
         />
       </div>
 
-      {/* Filtres */}
       <div className="flex flex-wrap justify-center gap-3 mb-8">
         {[
           { id: "all", label: "Toutes", count: allOffres.length },
@@ -122,12 +120,10 @@ export default function CataloguePage() {
         ))}
       </div>
 
-      {/* Résultats */}
       <div className="text-sm text-gray-500 mb-4">
         {filtered.length} offre(s) trouvée(s)
       </div>
 
-      {/* Grille */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
         {paginated.map((offre: OffreComplet) => (
           <Link
@@ -148,9 +144,9 @@ export default function CataloguePage() {
               {offre.descriptionCourte}
             </p>
             <div className="flex flex-wrap gap-1 mb-3">
-              {offre.outils.slice(0, 3).map((outil: string) => (
+              {offre.outils.slice(0, 3).map((outil: string, idx: number) => (
                 <span
-                  key={outil}
+                  key={idx}
                   className="text-xs px-1.5 py-0.5 bg-white/5 rounded text-gray-500"
                 >
                   {outil.split(" ")[0]}
@@ -174,7 +170,6 @@ export default function CataloguePage() {
         ))}
       </div>
 
-      {/* Pagination */}
       {totalPages > 1 && (
         <div className="flex justify-center gap-2 mt-10">
           <button
