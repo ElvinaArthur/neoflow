@@ -2,5 +2,12 @@
   "buildCommand": "next build",
   "installCommand": "npm install",
   "framework": "nextjs",
-  "outputDirectory": ".next"
+  "outputDirectory": ".next",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "functions": {
+    "app/offres/[slug]/page.tsx": {
+      "maxDuration": 10
+    }
+  }
 }
