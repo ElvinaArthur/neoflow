@@ -5,6 +5,7 @@ import {
   TrendingUp,
   Clock,
   Shield,
+  CheckCircle,
   Bot,
   Workflow,
   Database,
