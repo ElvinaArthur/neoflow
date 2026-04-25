@@ -1,5 +1,5 @@
 // lib/offres/dead-angles.ts
-import type { OffreComplet } from "./type";
+import type { OffreComplet } from "./types";
 
 export const deadAnglesOffres: OffreComplet[] = [
   {

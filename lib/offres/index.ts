@@ -1,5 +1,5 @@
 // lib/offres/index.ts
-export type { OffreComplet, Categorie, PrixTier } from "./type";
+export type { OffreComplet, Categorie, PrixTier } from "./types";
 export { basicsOffres } from "./basics";
 export { nichesOffres } from "./niches";
 export { deadAnglesOffres } from "./dead-angles";

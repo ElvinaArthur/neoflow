@@ -1,5 +1,5 @@
 // lib/offres/niches.ts
-import type { OffreComplet } from "./type";
+import type { OffreComplet } from "./types";
 
 export const nichesOffres: OffreComplet[] = [
   {

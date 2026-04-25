@@ -1,5 +1,5 @@
 // lib/offres/basics.ts
-import type { OffreComplet } from "./type";
+import type { OffreComplet } from "./types";
 
 const workflowsCommuns = {
   basiques: [
