@@ -16,7 +16,7 @@ export default function CataloguePage() {
   >("all");
   const [searchTerm, setSearchTerm] = useState("");
 
-  const filtered = allOffres.filter((o) => {
+  const filtered = allOffres.filter((o: OffreComplet) => {
     const matchCategorie =
       selectedCategorie === "all" || o.categorie === selectedCategorie;
     const matchSearch =
@@ -61,8 +61,7 @@ export default function CataloguePage() {
           Catalogue d'<span className="gradient-text">automatisations</span>
         </h1>
         <p className="text-gray-400 max-w-2xl mx-auto">
-          {allOffres.length} offres prêtes à l'emploi — de l'automatisation
-          basique à l'agent IA avancé
+          {allOffres.length} offres prêtes à l'emploi
         </p>
       </div>
 
@@ -87,17 +86,23 @@ export default function CataloguePage() {
           {
             id: "basique",
             label: "Basiques",
-            count: allOffres.filter((o) => o.categorie === "basique").length,
+            count: allOffres.filter(
+              (o: OffreComplet) => o.categorie === "basique",
+            ).length,
           },
           {
             id: "niche",
             label: "Niches",
-            count: allOffres.filter((o) => o.categorie === "niche").length,
+            count: allOffres.filter(
+              (o: OffreComplet) => o.categorie === "niche",
+            ).length,
           },
           {
             id: "angle-mort",
             label: "Angles morts",
-            count: allOffres.filter((o) => o.categorie === "angle-mort").length,
+            count: allOffres.filter(
+              (o: OffreComplet) => o.categorie === "angle-mort",
+            ).length,
           },
         ].map((cat) => (
           <button
@@ -124,7 +129,7 @@ export default function CataloguePage() {
 
       {/* Grille */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-        {paginated.map((offre) => (
+        {paginated.map((offre: OffreComplet) => (
           <Link
             key={offre.id}
             href={`/offres/${offre.slug}`}
@@ -143,7 +148,7 @@ export default function CataloguePage() {
               {offre.descriptionCourte}
             </p>
             <div className="flex flex-wrap gap-1 mb-3">
-              {offre.outils.slice(0, 3).map((outil) => (
+              {offre.outils.slice(0, 3).map((outil: string) => (
                 <span
                   key={outil}
                   className="text-xs px-1.5 py-0.5 bg-white/5 rounded text-gray-500"
@@ -159,7 +164,7 @@ export default function CataloguePage() {
             </div>
             <div className="flex justify-between items-center mt-2 pt-2 border-t border-white/10">
               <span className="text-emerald-500 font-bold">
-                dès {offre.prixTiers[0].prix}€
+                dès {offre.prixTiers[0]?.prix || 0}€
               </span>
               <span className="text-gray-500 text-sm group-hover:text-emerald-400 transition-colors">
                 Voir →
